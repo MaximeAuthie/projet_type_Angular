@@ -1,0 +1,17 @@
+<div class="les-amis p-3">
+    <!-- $event c'est une variable reservée spécialement pour capter un event -->
+    <!-- <input type="text" (input)="onUpdateAmiName($event)" class="form-control m-1"> -->
+    <input type="text" [(ngModel)]="amiName">
+    <!-- <h1>{{amiName}}</h1> -->
+    <button class="btn btn-success" [disabled]="!authorizeAmi" (click)="onCreationAmi()">Ajouter Ami</button>
+    <!-- On pourrait aussi Binder la propriété innerText (ou autre) pour injecter dynamiquement des données dans des éléments html -->
+    <!-- Ca fonctionne mais pour afficher dynamiquement des choses il vaut mieux passer par string interpolation {{}} -->
+    <!-- <p [innerText]="authorizeAmi"></p> -->
+    <!-- <p>{{lesAmisCreationStatus}}</p> -->
+    <h2 class="title-les-amis">La liste des copains : </h2>
+    <p *ngIf="amiCreated;else noAmi">🤙 Un Ami a été ajouté ({{amiName}})</p>
+    <ng-template #noAmi>
+        <p>Ne restez pas seul ajoutez un Ami</p>
+    </ng-template>
+    <app-un-ami *ngFor="let unAmi of mesAmis"></app-un-ami>
+</div>

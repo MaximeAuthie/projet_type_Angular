@@ -1,0 +1,23 @@
+<div class="container-fluid bg-success p-4">
+    <app-blog-control (artCreated)="onArticleAdded($event)" (brouillonCreated)="onBrouillonAdded($event)"></app-blog-control> <!-- Ici on écoute nos emits personnalisés issu de blog-control.component-->
+    <div class="row mt-1">
+        <div class="col">
+            <app-article-element *ngFor="let articleElement of mesArticles" [articleElement]="articleElement"> <!--Je passe ma variable temporaire 'ArticleElement' dans un attribut [artibleelement] bondé à la varaible element du composant 'article-element'-->
+
+            </app-article-element>
+            <!-- Ici, on utilise ng-content pour renseigner le template du composant enfant dans le composant parent-->
+            <app-article-ng-content-element *ngFor="let articleElement of mesArticles"> <!--Je passe ma variable temporaire 'ArticleElement' dans un attribut [artibleelement] bondé à la varaible element du composant 'article-element'-->
+              <div class="card mb-1 bg-info">
+              <div class="card-header">{{articleElement.title}}</div>
+              <div class="card-body">
+                <p class="card-text">
+                  <strong *ngIf="articleElement.type==='article'" class="text-primary">{{articleElement.content}}</strong>
+                  <em *ngIf="articleElement.type==='brouillon'" class="text-dark">{{articleElement.content}}</em>
+                </p>
+              </div>
+            </div>
+            </app-article-ng-content-element>
+
+        </div>
+    </div>
+</div>

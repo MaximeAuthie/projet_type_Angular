@@ -1,0 +1,8 @@
+<div [ngStyle]="{backgroundColor: getColor()}" class="container">
+    <h5>ID : {{unAmiId}}</h5>
+    <p [ngClass]="{amiOn:unAmiStatus ==='ON', amiOff:unAmiStatus==='OFF'}"> status : {{unAmiStatus}}</p>
+    <p>{{ 'Du texte'}}</p>
+    <p>{{1 ==1 ? 'Hello':'world' }}</p>
+    {{unAmiTemplate}}
+    <p>avec une ƒ° executée dans le template :  {{getUnAmiStatus()}}</p>
+</div>

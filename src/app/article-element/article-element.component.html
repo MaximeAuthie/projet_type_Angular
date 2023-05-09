@@ -1,0 +1,10 @@
+<div class="card mb-1 bg-info">
+    <div class="card-header">{{element.title}}</div>
+    <div class="card-body">
+      <!-- <h5 class="card-title">{{element.type}}</h5> -->
+      <p class="card-text">
+        <strong *ngIf="element.type==='article'" class="text-primary">{{element.content}}</strong>
+        <em *ngIf="element.type==='brouillon'" class="text-dark">{{element.content}}</em>
+    </p>
+    </div>
+  </div>
