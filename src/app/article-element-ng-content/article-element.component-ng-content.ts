@@ -11,7 +11,7 @@ export class ArticleElementComponent implements OnInit, OnChanges, DoCheck, Afte
   }
   ngOnChanges(changes:SimpleChanges) { //!pour typer la propriété comme étant un changement (objet) => penser à l'importer en haut du fichier
     console.log("ngOnChanges lancé");
-    console.log(changes);
+    console.log(changes); //! Grace à ça, on va pouvoir voir le changement interprété par Angular
 
   }
   ngOnInit() {
